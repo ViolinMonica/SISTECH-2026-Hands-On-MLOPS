@@ -9,11 +9,7 @@ MAE holdout **11,37** · RMSE **14,04** · R² **0,310**.
 
 ```bash
 pip install -r requirements.txt
-
-# Sekali saja (atau tiap kali model dilatih ulang di CP2):
 python build_serving_artifacts.py
-
-# Jalankan server:
 python -m uvicorn app:app --reload --port 8000
 ```
 
