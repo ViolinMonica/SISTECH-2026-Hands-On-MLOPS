@@ -1,9 +1,6 @@
 # Crime Risk Score API — Checkpoint 3
 
-REST API yang menyajikan model *risk score* hasil Checkpoint 2. Menerima **lokasi**
-dan **waktu**, mengembalikan **estimasi Risk Score (0–100)** beserta level risikonya.
-
-Model aktif: **champion v4** — HistGradientBoostingRegressor, 14 fitur,
+Model aktif: **champion v4**, HistGradientBoostingRegressor, 14 fitur,
 MAE holdout **11,37** · RMSE **14,04** · R² **0,310**.
 
 ---
