@@ -1,4 +1,4 @@
-# Crime Risk Score API — Checkpoint 3
+# Crime Risk Score API 
 
 Model aktif: **champion v4**, HistGradientBoostingRegressor, 14 fitur,
 MAE holdout **11,37** · RMSE **14,04** · R² **0,310**.
@@ -68,7 +68,7 @@ tidak dikonversi.
 ```
 
 Empat field pertama adalah **kontrak inti** dan mengikuti persis contoh skema pada
-soal. Sisanya bersifat tambahan — aman diabaikan konsumen yang tidak membutuhkan.
+soal. Sisanya bersifat tambahan, aman diabaikan konsumen yang tidak membutuhkan.
 
 | Field | Tipe | Keterangan |
 |---|---|---|
@@ -153,14 +153,14 @@ diagregasi di `/metrics` sebagai indikator kesehatan.
 
 Yang dipantau dan alasannya:
 
-- **Traffic & error rate** — sistem hidup dan tidak gagal diam-diam.
-- **Latensi p50/p95** — layak dipakai realtime atau tidak. Terukur p50 ≈ 11 ms.
-- **Distribusi level** — output yang tiba-tiba `Critical` semua adalah gejala rusak.
-- **Rasio fallback fitur** — makin tinggi, makin banyak request menyasar wilayah
+- **Traffic & error rate** - sistem hidup dan tidak gagal diam-diam.
+- **Latensi p50/p95** - layak dipakai realtime atau tidak. Terukur p50 ≈ 11 ms.
+- **Distribusi level** - output yang tiba-tiba `Critical` semua adalah gejala rusak.
+- **Rasio fallback fitur** - makin tinggi, makin banyak request menyasar wilayah
   yang datanya tipis.
-- **PSI drift output** — kelanjutan dari drift detection CP2. Di sana yang diperiksa
+- **PSI drift output** - kelanjutan dari drift detection CP2. Di sana yang diperiksa
   input; di sini distribusi **hasil prediksi produksi**.
-- **Performa antar versi** — MAE/RMSE/R² v0…v4 dibaca dari registry.
+- **Performa antar versi** - MAE/RMSE/R² v0…v4 dibaca dari registry.
 
 Laporan CLI dari file log (berguna setelah restart, saat metrik in-memory kosong):
 
