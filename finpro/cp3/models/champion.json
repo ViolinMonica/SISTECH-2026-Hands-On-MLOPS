@@ -1,0 +1,35 @@
+{
+  "version": 4,
+  "checkpoint_path": "models\\model_v4.joblib",
+  "checkpoint_sha256": "4a79471355846d683399cf45d03dae6021af1f34370de5116f2588c3db2a2066",
+  "metrics": {
+    "MAE": 11.36584672765467,
+    "RMSE": 14.044174849221344,
+    "R2": 0.3096600173991194,
+    "MAE_per_band": {
+      "(0, 20]": 18.50320823466404,
+      "(20, 40]": 7.549442916640136,
+      "(40, 60]": 9.895510846630037,
+      "(60, 80]": 19.149528610901793,
+      "(80, 100]": 20.329510239447746
+    }
+  },
+  "batch_index": 4,
+  "feature_names": [
+    "lat_r",
+    "lon_r",
+    "hour_sin",
+    "hour_cos",
+    "dow_sin",
+    "dow_cos",
+    "crime_count",
+    "is_weekend",
+    "n_crimes_fit",
+    "density_ratio_fit",
+    "mean_severity",
+    "max_severity",
+    "pct_violent",
+    "n_distinct_types"
+  ],
+  "updated_utc": "2026-08-06T15:51:32.570737+00:00"
+}

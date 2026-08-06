@@ -1,0 +1,24 @@
+# Checkpoint 3 - REST API Serving + Monitoring
+# Versi dikunci ke yang dipakai saat model dilatih & artefak dibuat.
+#
+# CATATAN PENTING soal scikit-learn:
+#   models/*.joblib berisi objek estimator hasil pickle. Memuatnya dengan versi
+#   scikit-learn yang berbeda bisa memunculkan InconsistentVersionWarning atau
+#   gagal sama sekali. Kalau versi ini terpaksa dinaikkan, latih ulang notebook
+#   Checkpoint 2 supaya checkpoint dibuat ulang oleh versi yang sama.
+
+# --- serving ---
+fastapi==0.141.1
+uvicorn[standard]==0.52.1
+pydantic==2.12.4
+
+# --- model & data ---
+scikit-learn==1.9.0
+pandas==3.0.3
+numpy==2.5.0
+scipy==1.18.0
+joblib==1.5.3
+
+# --- pelaporan & pengujian ---
+matplotlib==3.11.1
+httpx==0.28.1

@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-08-06T16:33:28.271203+00:00",
+  "service": {
+    "started_at": "2026-08-06T16:33:26.787709+00:00",
+    "uptime_seconds": 1.5,
+    "last_prediction_at": "2026-08-06T16:33:28.238520+00:00"
+  },
+  "traffic": {
+    "total_requests": 12,
+    "total_predictions": 7,
+    "total_errors": 5,
+    "error_rate": 0.4167,
+    "errors_by_type": {
+      "InputError": 3,
+      "RequestValidationError": 2
+    },
+    "requests_per_minute": null
+  },
+  "latency_ms": {
+    "count": 7,
+    "mean": 7.54,
+    "p50": 7.45,
+    "p95": 8.03,
+    "max": 8.14
+  },
+  "predictions": {
+    "level_distribution": {
+      "High": 3,
+      "Medium": 3,
+      "Low": 1
+    },
+    "score_mean": 42.97,
+    "score_min": 24.43,
+    "score_max": 57.03
+  },
+  "data_quality": {
+    "crime_count_source": {
+      "exact": 4,
+      "global": 2,
+      "cell_mean": 1
+    },
+    "out_of_coverage_requests": 1,
+    "unknown_cell_requests": 1,
+    "fallback_rate": 0.4286
+  },
+  "output_drift": {
+    "psi": null,
+    "status": "insufficient_data",
+    "n_scores": 7,
+    "note": "PSI dihitung setelah minimal 30 prediksi terkumpul."
+  },
+  "model": {
+    "champion_version": "v4",
+    "last_updated": "2026-08-06",
+    "integrity_verified": true,
+    "holdout_metrics": {
+      "MAE": 11.3658,
+      "RMSE": 14.0442,
+      "R2": 0.3097
+    }
+  },
+  "model_history": {
+    "versions": [
+      {
+        "version": "v0",
+        "batch_index": 0,
+        "train_size": 59966,
+        "decision": "initial_champion",
+        "drift_detected": null,
+        "MAE": 12.945001419153733,
+        "RMSE": 15.829476355289616,
+        "R2": 0.12299177038272557,
+        "is_champion": false
+      },
+      {
+        "version": "v1",
+        "batch_index": 1,
+        "train_size": 119932,
+        "decision": "promoted",
+        "drift_detected": true,
+        "MAE": 12.238643478872687,
+        "RMSE": 14.994676889254032,
+        "R2": 0.21305424784251215,
+        "is_champion": false
+      },
+      {
+        "version": "v2",
+        "batch_index": 2,
+        "train_size": 179898,
+        "decision": "promoted",
+        "drift_detected": true,
+        "MAE": 12.039091884557878,
+        "RMSE": 14.767834909561495,
+        "R2": 0.23668424019640444,
+        "is_champion": false
+      },
+      {
+        "version": "v3",
+        "batch_index": 3,
+        "train_size": 239864,
+        "decision": "promoted",
+        "drift_detected": true,
+        "MAE": 11.752021839621092,
+        "RMSE": 14.43077081011988,
+        "R2": 0.27113074675349913,
+        "is_champion": false
+      },
+      {
+        "version": "v4",
+        "batch_index": 4,
+        "train_size": 299832,
+        "decision": "promoted",
+        "drift_detected": true,
+        "MAE": 11.36584672765467,
+        "RMSE": 14.044174849221344,
+        "R2": 0.3096600173991194,
+        "is_champion": true
+      }
+    ],
+    "n_versions": 5,
+    "champion": "v4",
+    "improvement": {
+      "MAE": {
+        "from": 12.945,
+        "to": 11.3658,
+        "delta": -1.5792,
+        "pct": -12.2
+      },
+      "R2": {
+        "from": 0.123,
+        "to": 0.3097,
+        "delta": 0.1867
+      }
+    },
+    "retrain_events": 4,
+    "skipped_no_drift": 0
+  }
+}
