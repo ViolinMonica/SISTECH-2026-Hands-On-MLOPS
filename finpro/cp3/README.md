@@ -33,6 +33,19 @@ curl "http://127.0.0.1:8000/risk-score?lat=41.8819&lon=-87.6278&datetime=2024-11
 
 ## 2. Kontrak API (for fe)
 
+### CORS — bisa langsung dipanggil dari browser
+
+API ini sudah mengaktifkan **CORS** (`allow_origins=["*"]`), jadi tim FE bisa
+`fetch()`/`axios` langsung dari JavaScript di browser ke `http://127.0.0.1:8000`
+tanpa perlu proxy backend sendiri, walau origin FE-nya beda (mis. FE jalan di
+`localhost:3000`, API di `localhost:8000`). Tanpa ini, browser bakal nge-block
+request-nya sendiri sebelum sempat sampai ke server — bukan error dari kode FE.
+
+Kalau nanti API ini di-deploy ke luar (bukan cuma lokal) dan mau lebih ketat,
+`allow_origins=["*"]` di `app.py` bisa diganti ke origin spesifik punya FE
+(contoh: `["https://app-fe-kalian.com"]`) — koordinasikan dulu sebelum diubah,
+karena itu juga bagian dari kontrak.
+
 ### Endpoint utama
 
 ```

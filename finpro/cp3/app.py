@@ -21,6 +21,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Query, Request
 from fastapi.exceptions import RequestValidationError
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 
@@ -65,6 +66,19 @@ app = FastAPI(
     ),
     version="1.0.0",
     lifespan=lifespan,
+)
+
+# Izinkan API ini dipanggil langsung dari browser oleh tim Front-End (origin
+# berbeda, mis. localhost:3000 -> localhost:8000). Tanpa ini, request dari
+# JavaScript di browser akan diblokir oleh browser sendiri (CORS policy),
+# walau API-nya sendiri berjalan normal. "*" cukup untuk skala tugas ini;
+# ganti ke origin spesifik punya FE kalau mau lebih ketat.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 
